@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from '@next/font/google';
 import "./globals.css";
 
-
 import CustomCursorShadow  from './components/customCursor/CustomCursor'
 
 const inter = Inter({
