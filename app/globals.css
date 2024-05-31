@@ -2,32 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.scroll-hidden::-webkit-scrollbar {
+    display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.scroll-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-cursor {
+    width: 1px;
+    height: 1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 1000px;
+    box-shadow: 0 0 440px 90px rgba(230, 230, 230, 0.11);
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-family: 'Inter', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.custom-border-gradient:hover {
+    border: 0.6px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.090);
+    border-right-color: rgba(255, 255, 255, 0.015);
+    border-bottom-color: rgba(46, 46, 46, 0.205);
+    border-left-color: rgba(255, 255, 255, 0.015);
 }
+
+.hover-opacity-others:hover .child {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.hover-opacity-others:hover .child:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.child {
+    transition: opacity 0.3s ease;
+  }
