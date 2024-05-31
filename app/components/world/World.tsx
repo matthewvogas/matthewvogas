@@ -62,12 +62,12 @@ export const World: React.FC = () => {
     return (
         <div
             id="three-container"
-            className='opacity-40 mx-auto  relative hidden md:block'
+            className='opacity-40 mx-auto max-h-[350px]  relative hidden md:block'
             style={{
                 width: '100%',
                 height: '100%',
                 maxWidth: '500px',
-                maxHeight: '500px'
+                maxHeight: '300px'
             }}
         >
         </div>

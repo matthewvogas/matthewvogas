@@ -15,7 +15,7 @@ export default function Home() {
     <main className='grid grid-cols-1 lg:grid-cols-2 gap-4 text-[#fafafaf8] w-full'>
       <section className=' lg:pt-24 lg:w-3/4 lg:py-24 flex flex-col justify-between'>
         <div>
-          <h1 className='opacity-90 text-[#fafafaf8] text-5xl font-semibold '>Matthew Guillén</h1>
+          <h1 className='opacity-90 text-[#fafafaf8] text-5xl font-semibold'>Matthew Guillén</h1>
           <h2 className='mt-3 mb-3 text-1xl font-medium tracking-tight text-slate-200 sm:text-xl'>Full-Stack Engineer</h2>
           <p className='scroll-mt-16 text-slate-400 lg:scroll-mt-24'>
             {`Software engineer specialized in front-end and full-stack development with over three years of experience in web applications. Passionate about intuitive interfaces and robust security practices. Before programming,  `}
@@ -44,8 +44,9 @@ export default function Home() {
                 name={experience.name}
                 description={experience.description}
                 stack={experience.stack}
-                items={experience.items}
-              />
+                items={experience.items} 
+                url={experience.url}
+                 />
             </div>
           ))}
         </div>
