@@ -14,13 +14,13 @@ interface Props {
 
 export const ExternalLinks = ({ items }: Props) => {
     return (
-        <div className="mt-3 flex gap-4">
+        <div className="mt-2 flex gap-4 cursor-pointer">
             {items && (
                 items.map((item, index) => {
                     return (
-                        <Link className="cursor-pointer opacity-40 hover:opacity-100 hover:transition-opacity flex mt-2" key={index} href={item.url}>
+                        <Link target="_blank" className="opacity-40 hover:opacity-100 hover:transition-opacity flex mt-2" key={index} href={item.url}>
                             <Image className="max-w-[14px] mr-[2px]" src={item.icon} alt={item.description} />
-                            <label className="text-sm">{item.description}</label>
+                            <label className="text-sm cursor-pointer">{item.description}</label>
                         </Link>
                     )
                 })

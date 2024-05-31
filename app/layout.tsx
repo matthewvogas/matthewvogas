@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#111111] ${inter.className} mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 scroll-hidden`}>
+      <body className={`bg-[#03040f] ${inter.className} mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 scroll-hidden`}>
         <CustomCursorShadow />
         {children}
       </body>
