@@ -139,7 +139,7 @@ export const social = [
     {
         icon: github,
         name: "Github",
-        url: "https://github.com/bvrgerqueen"
+        url: "https://github.com/matthewvogas"
     },
     {
         icon: linkedin,
