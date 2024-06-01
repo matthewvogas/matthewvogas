@@ -24,7 +24,7 @@ export default function Home() {
             </Link>
             {` so I have the perfect pixel eye for the interface. `}
             <Link className='hover:transition-colors font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='mailto:mvttheo@outlook.com'>
-              Let's chat.
+              {`Let's chat.`}
             </Link>
           </p>
           <World />
