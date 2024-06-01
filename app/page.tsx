@@ -20,7 +20,7 @@ export default function Home() {
           <p className='scroll-mt-16 text-slate-400 lg:scroll-mt-24'>
             {`Software engineer specialized in front-end and full-stack development with over three years of experience in web applications. Passionate about intuitive interfaces and robust security practices. Before programming,  `}
             <Link className='font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='https://www.figma.com/@matthewvogas'>
-            I used to design a lot in Figma,
+              I used to design a lot in Figma,
             </Link>
             {` so I have the perfect pixel eye for the interface.`}
           </p>
@@ -44,9 +44,9 @@ export default function Home() {
                 name={experience.name}
                 description={experience.description}
                 stack={experience.stack}
-                items={experience.items} 
+                items={experience.items}
                 url={experience.url}
-                 />
+              />
             </div>
           ))}
         </div>
@@ -59,8 +59,6 @@ export default function Home() {
           ))}
         </div>
         <Link className='mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl mb-24 custom-underline' href={'https://www.figma.com/@matthewvogas'}>Design Protypes</Link>
-
-
         <div className='relative z-0 hover-opacity-others'>
           {blogs.map((blog, index) => (
             <div className="child" key={index}>
@@ -68,10 +66,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-
         <Link className='mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl mb-24 custom-underline' href={'https://medium.com/@matthewvogas'}>Blogs in Medium</Link>
-
-
       </section>
     </main>
   );

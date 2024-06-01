@@ -4,9 +4,9 @@ import { ExternalLinks } from "../externalLinks/ExternalLinks";
 import Image from "next/image";
 import Link from "next/link";
 interface Item {
-    url: string;
-    icon: string;
-    description: string;
+    url?: string;
+    icon?: string;
+    description?: string;
 }
 
 type StaticImageData = {
@@ -20,7 +20,7 @@ interface Props {
     name: string,
     description: string,
     image: StaticImageData,
-    items: Item[]
+    items?: Item[]
 }
 
 export const ProjectCard = ({ name, description, image, items }: Props) => {
