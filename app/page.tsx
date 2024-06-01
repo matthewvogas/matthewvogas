@@ -19,10 +19,13 @@ export default function Home() {
           <h2 className='mt-3 mb-3 text-1xl font-medium tracking-tight text-slate-200 sm:text-xl'>Full-Stack Engineer</h2>
           <p className='scroll-mt-16 text-slate-400 lg:scroll-mt-24 text-'>
             {`Software engineer specialized in front-end and full-stack development with over three years of experience in web applications. Passionate about intuitive interfaces and robust security practices. Before programming,  `}
-            <Link className='font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='https://www.figma.com/@matthewvogas'>
+            <Link className='hover:transition-colors font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='https://www.figma.com/@matthewvogas'>
               I used to design a lot in Figma,
             </Link>
-            {` so I have the perfect pixel eye for the interface.`}
+            {` so I have the perfect pixel eye for the interface. `}
+            <Link className='hover:transition-colors font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='mailto:mvttheo@outlook.com'>
+              Let's chat.
+            </Link>
           </p>
           <World />
         </div>

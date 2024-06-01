@@ -79,7 +79,7 @@ export const projects = [
         name: "Web3",
         description: "Donation of a website for the web3 Costa Rica community",
         items: [{ url: "https://web3cr.com/", icon: LinkSvg, description: "Website" }, { url: "https://discord.gg/mnKzQzA3", icon: LinkSvg, description: "Discord Comunnity" }],
-        url: "",
+        url: "https://web3cr.com/",
     },
     {
         image: Mall,
@@ -98,7 +98,7 @@ export const projects = [
     {
         image: Norte,
         name: "Cabañas del Norte",
-        description: "Design, development and maintenance of Website Hotel",
+        description: "Design, development and maintenance of Hotel Website",
         items: [{ }],
         url: "https://cabanasdelnorte.com/",
     },
@@ -112,7 +112,7 @@ export const projects = [
     {
         image: Bungalows,
         name: "Bungalows Las Iguanas",
-        description: "Design, development and maintenance of Website Hotel",
+        description: "Design, development and maintenance of Hotel Website",
         items: [{ }],
         url: "https://bungalowslasiguanas.com/",
     },
