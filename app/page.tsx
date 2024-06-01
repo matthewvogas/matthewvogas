@@ -54,7 +54,7 @@ export default function Home() {
         <div className='relative z-0 hover-opacity-others'>
           {projects.map((project, index) => (
             <div className="child" key={index}>
-              <ProjectCard name={project.name} description={project.description} image={project.image} items={project.items} />
+              <ProjectCard name={project.name} description={project.description} image={project.image} items={project.items} url={project.url} />
             </div>
           ))}
         </div>
