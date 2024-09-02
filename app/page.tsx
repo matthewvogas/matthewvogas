@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className='opacity-90 text-[#fafafaf8] text-5xl font-semibold'>Matthew Guillén</h1>
           <h2 className='mt-3 mb-3 text-1xl font-medium tracking-tight text-slate-200 sm:text-xl'>Frontend Engineer & Product Designer</h2>
           <p className='scroll-mt-16 text-slate-400 lg:scroll-mt-24 text-'>
-            {`Software engineer specialized in front-end development with almost 4 of experience in web applications. Passionate about intuitive interfaces and robust security practices. Before programming,  `}
+            {`Software engineer specialized in front-end development with almost 4 years of experience in web applications. Passionate about intuitive interfaces and robust security practices. Before programming,  `}
             <Link className='hover:transition-colors font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#7167ff]' href='https://www.figma.com/@matthewvogas'>
               I used to design a lot in Figma,
             </Link>
@@ -70,7 +70,7 @@ export default function Home() {
           ))}
         </div>
         <Link className='mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl mb-12 custom-underline' href={'https://medium.com/@matthewvogas'}>Blogs in Medium</Link>
-        <p className='text-sm opacity-55 hover:opacity-100 transition-opacity'>
+        <p className='text-sm opacity-55 hover:opacity-100 transition-opacity '>
           {`Website rigorously designed in figma, developed in Next.js using React.js and published in Vercel.`}
         </p>
       </section>
