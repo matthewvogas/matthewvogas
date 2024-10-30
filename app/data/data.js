@@ -7,7 +7,7 @@ import instagram from '../../public/icons/instagram.svg'
 
 import GesmiaWeb from '../../public/images/projects/GesmiaWeb.png'
 import PixelPerfect from '../../public/images/projects/PixelPerfect.png'
-import WorldPlaza from '../../public/images/projects/WorldPlaza.png'
+import Nothing from '../../public/images/projects/Nothing.png'
 
 export const experience = [
     {
@@ -78,7 +78,7 @@ export const experience = [
 export const projects = [
     {
         image: GesmiaWeb,
-        name: "Landing Page & MVP",
+        name: "Landing Pages & MVPs",
         description: "From launching landing pages to creating fast MVPs",
         items: [{}],
         url: "https://gesmia.com/",
@@ -91,9 +91,9 @@ export const projects = [
         url: "https://figma.com/@matthewvogas",
     },
     {
-        image: WorldPlaza,
-        name: "Accessibility - UX First",
-        description: "Always keeping in mind the creation of products for the entire market",
+        image: Nothing,
+        name: "Creativity",
+        description: "Always keeping in mind the balance between innovation and functionality.",
         items: [{}],
         url: "https://gesmia.com/",
     },

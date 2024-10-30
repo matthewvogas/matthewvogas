@@ -26,7 +26,7 @@ interface Props {
 
 export const ProjectCard = ({ name, description, image, items, url }: Props) => {
     return (
-        <div className="group flex flex-col gap-4 rounded w-full mb-4 lg:px-4 lg:pt-4 border border-transparent custom-border-gradient lg:hover:shadow-sm lg:hover:bg-[#928ec40a] transition-colors duration-200">
+        <div className="overflow-clip group flex flex-col gap-4 rounded w-full mb-4 lg:px-4 lg:pt-4 border border-transparent custom-border-gradient lg:hover:shadow-sm lg:hover:bg-[#928ec40a] transition-colors duration-200">
             <div>
                 <Link className="flex" href={url}>
                     <h3 className="group-hover:text-[#7167ff] font-medium leading-snug text-slate-200 inline-block">{name}</h3>
@@ -35,7 +35,7 @@ export const ProjectCard = ({ name, description, image, items, url }: Props) => 
                 <p className="mt-2 text-sm leading-normal text-slate-400">{description}</p>
             </div>
             <div>
-                <Image src={image} alt={""} className="h-full w-full object-cover" />
+                <Image src={image} alt={""} className="-mb-2 h-full w-full object-cover transition-transform duration-500 group-hover:translate-y-[-5px]" />
             </div>
         </div>
     )
