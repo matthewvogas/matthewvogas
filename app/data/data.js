@@ -14,8 +14,8 @@ export const experience = [
         startDate: "Sep. 2024",
         endDate: "Present",
         name: "Designer & Product Developer at Holdex",
-        description: "Designed, developed, and reviewed code as part of a high-performance team for Clearpool Protocol and Ozean Protocol development.",
-        stack: ["Svelte", "Subsquid", "Tailwind", "GraphQL", "SCSS"],
+        description: "Designed, developed, and reviewed code as part of a high-performance team for Truflation, Index.Fun, Clearpool Protocol and Ozean Protocol development.",
+        stack: ["Svelte", "Subsquid", "Tailwind", "GraphQL", "SCSS", "Next", "React"],
         items: [{}],
         url: "https://www.holdex.io/"
     },
