@@ -8,6 +8,7 @@ import instagram from '../../public/icons/instagram.svg'
 import GesmiaWeb from '../../public/images/projects/GesmiaWeb.png'
 import PixelPerfect from '../../public/images/projects/PixelPerfect.png'
 import Nothing from '../../public/images/projects/Nothing.png'
+import MYRV from '../../public/images/projects/MYRV.png'
 
 export const experience = [
     {
@@ -73,29 +74,46 @@ export const experience = [
         items: [{}],
         url: ""
     },
+    {
+        startDate: "2024",
+        endDate: "2025",
+        name: "Frontend Developer (Nitel)",
+        description: "Developed internal tools using Angular and SCSS, enhancing data visualization and operational workflows. Integrated Salesforce for process automation and real-time reporting, boosting internal productivity by 25%. Built reusable UI components for scalable, efficient system expansion.",
+        stack: ["Angular", "SCSS", "Salesforce", "TS", "JS"],
+        items: [{}],
+        url: ""
+    }
+    
 ];
 
 export const projects = [
     {
         image: GesmiaWeb,
-        name: "Landing Pages & MVPs",
+        name: "Gesmia - Landing Page & MVP",
         description: "From launching landing pages to creating fast MVPs",
         items: [{}],
         url: "https://gesmia.com/",
     },
     {
         image: PixelPerfect,
-        name: "Pixel Perfect Eye",
+        name: "Design - Pixel Perfect Eye",
         description: "Over 27k open source downloads speak for me on Figma",
         items: [{}],
         url: "https://figma.com/@matthewvogas",
     },
     {
         image: Nothing,
-        name: "Creativity",
+        name: "Personal Creative Project",
         description: "Always keeping in mind the balance between innovation and functionality.",
         items: [{}],
         url: "https://gesmia.com/",
+    },
+    {
+        image: MYRV,
+        name: "MYRV's Personal Portafolio",
+        description: "Showcasing creativity, innovation, and seamless digital experiences.",
+        items: [{}],
+        url: "https://myrv.dev/",
     },
 ];
 
