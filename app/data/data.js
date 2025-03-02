@@ -7,113 +7,112 @@ import instagram from '../../public/icons/instagram.svg'
 
 import GesmiaWeb from '../../public/images/projects/GesmiaWeb.png'
 import PixelPerfect from '../../public/images/projects/PixelPerfect.png'
-import Nothing from '../../public/images/projects/Nothing.png'
-import MYRV from '../../public/images/projects/MYRV.png'
+import Index from '../../public/images/projects/Index.png'
+import Hoosling from '../../public/images/projects/Hoosling.png'
 
 export const experience = [
     {
-        startDate: "Sep. 2024",
-        endDate: "Present",
+        startDate: "2024",
+        endDate: "Contractor",
         name: "Designer & Product Developer at Holdex",
-        description: "Designed, developed, and reviewed code as part of a high-performance team for Truflation, Index.Fun, Clearpool Protocol and Ozean Protocol development.",
-        stack: ["Svelte", "Subsquid", "Tailwind", "GraphQL", "SCSS", "Next", "React"],
+        description: "Designed, developed, and reviewed code as part of a high-performance web3 team for Index.Fun, Truflation, Clearpool Protocol and Ozean",
+        stack: ["Svelte", "Subsquid", "Tailwind", "GraphQL", "React", "Supabase", "ThirdWeb"],
         items: [{}],
         url: "https://www.holdex.io/"
     },
     {
-        startDate: "Aug. 2024",
-        endDate: "Sep. 2024",
-        name: "Designer & Frontend Mobile Engineer at Gesmia",
-        description: "Led the UI design using Atomic Design and developed an iOS/Android app with React Native, Zustand, and Storybook, integrating an API built in C# - .NET provided by the Backend team.",
-        stack: ["React Native", "Zustand", "Storybook", "C#", ".NET"],
-        items: [{}],
-        url: "https://www.gesmia.com/"
-    },
-    {
-        startDate: "Sept. 2022",
-        endDate: "Jul. 2024",
-        name: "Frontend Developer & Designer at Golabs Tech",
-        description: "Optimized a legacy e-commerce with React/Redux, cutting load times by 20%, built a web app for influencers used by L'Oréal Paris, developed a .NET API for electric chargers, enhanced security in Angular/.NET sites, and led coin exchange features for mobile and web apps.",
-        stack: ["React", "Redux", "Next.js", ".NET", "Angular", "Laravel"],
-        items: [{}],
-        url: "https://golabstech.com"
-    },
-    {
-        startDate: "2023",
-        endDate: "Present",
-        name: "Figma Design Community Contributor",
-        description: "Achieved +27,000 Figma Interfaces Downloads Milestone through open-source contributions.",
-        stack: ["Figma"],
-        items: [{}],
-        url: "https://www.figma.com/@matthewvogas"
-    },
-    {
-        startDate: "Oct. 2021",
-        endDate: "Sept. 2022",
-        name: "Front-End Engineer Web3 & Co-Founder at Hoosling",
-        description: "Developed a crowdfunding platform with React and PHP, achieving $4K MRR, handling UI/UX, frontend development, and usability testing with Hotjar and Figma.",
-        stack: ["React", "PHP", "Figma", "Hotjar"],
-        items: [{}],
-        url: "https://medium.com/@matthewvogas/levantar-inversi%C3%B3n-con-criptomonedas-futurista-o-una-estupidez-80dbfb5bc3a?source=user_profile---------3----------------------------"
-    },
-    {
-        startDate: "2021",
-        endDate: "2021",
-        name: "Web3 Costa Rica Contributor",
-        description: "Designed and developed the community website for Web3 Costa Rica at my 17 years old.",
-        stack: ["Next.js", "Figma"],
-        items: [{}],
-        url: "https://web3cr.com"
-    },
-    {
-        startDate: "May. 2021",
-        endDate: "Sept. 2022",
-        name: "Designer & Developer (Freelancer)",
-        description: "Redesigned the Cavernas Expedition site in Figma and built it on WordPress, boosting bookings by 40%. Led UI/UX updates for Bungalows Las Iguanas and Cabañas del Norte on web and mobile. Developed the Mall World Plaza redesign in WordPress.",
-        stack: ["Figma", "WordPress", "Sketch", "TS", "JS"],
+        startDate: "2024",
+        endDate: "2025",
+        name: "Frontend Developer at Nitel",
+        description: "Developed internal tools using Angular and SCSS. Integrated Salesforce for process automation and real-time reporting.",
+        stack: ["Angular", "SCSS", "Salesforce", "TypeScript", "Express"],
         items: [{}],
         url: ""
     },
     {
         startDate: "2024",
-        endDate: "2025",
-        name: "Frontend Developer (Nitel)",
-        description: "Developed internal tools using Angular and SCSS, enhancing data visualization and operational workflows. Integrated Salesforce for process automation and real-time reporting, boosting internal productivity by 25%. Built reusable UI components for scalable, efficient system expansion.",
-        stack: ["Angular", "SCSS", "Salesforce", "TS", "JS"],
+        endDate: "Freelance",
+        name: "Designer & Mobile Engineer at Gesmia",
+        description: "Led the App design and developed an iOS/Android integrating an API built in C# for realtime information provided by the Backend team.",
+        stack: ["React Native", "Zustand", "Storybook", "Figma", "Web Sockets"],
+        items: [{}],
+        url: "https://www.gesmia.com/"
+    },
+    {
+        startDate: "2022, 2024",
+        endDate: "Full Time",
+        name: "Frontend Developer & Full-Stack at Golabs Tech",
+        description: "Development of more than 5 projects, including a web app for influencers used by L'Oréal Paris, a .NET API for electric chargers and a coin exchange features for mobile and web app.",
+        stack: ["React", "Redux", "Next", ".NET", "Angular", "Laravel", "Node"],
+        items: [{}],
+        url: "https://golabstech.com"
+    },
+    {
+        startDate: "2023",
+        endDate: "Contributor",
+        name: "Figma Design Community Contributor",
+        description: "Achieved +30,000 Figma Interfaces Downloads Milestone through open-source contributions.",
+        stack: ["Figma", "Framer Motion", "Three JS", "Blender 3D"],
+        items: [{}],
+        url: "https://www.figma.com/@matthewvogas"
+    },
+    {
+        startDate: "2021",
+        endDate: "Co-Founder",
+        name: "Co-Founder at Hoosling & Front-End Engineer",
+        description: "Developed a crowdfunding platform with React and PHP, achieving $2K MRR, handling UI/UX, frontend development, and usability testing with Hotjar and Figma.",
+        stack: ["React", "PHP", "Figma", "Hotjar", "JavaScript"],
+        items: [{}],
+        url: "https://medium.com/@matthewvogas/levantar-inversi%C3%B3n-con-criptomonedas-futurista-o-una-estupidez-80dbfb5bc3a?source=user_profile---------3----------------------------"
+    },
+    {
+        startDate: "2021",
+        endDate: "Contributor",
+        name: "Web3 Costa Rica Site",
+        description: "Designed and developed the community website for Web3 Costa Rica at my 17 years old.",
+        stack: ["Next.js", "Figma", "Rizz"],
+        items: [{}],
+        url: "https://web3cr.com"
+    },
+    {
+        startDate: "2021, 2022",
+        endDate: "Freelance",
+        name: "Freelance",
+        description: "Working through freelance projects at 16 years old, including Cavernas Del Venado Expedition, an Shopping center in Quito, Ecuador and some hotels in Costa Rica",
+        stack: ["Figma", "WordPress", "CMSs", "JavaScript"],
         items: [{}],
         url: ""
-    }
-    
+    },
 ];
 
 export const projects = [
     {
-        image: GesmiaWeb,
-        name: "Gesmia - Landing Page & MVP",
-        description: "From launching landing pages to creating fast MVPs",
-        items: [{}],
-        url: "https://gesmia.com/",
-    },
-    {
         image: PixelPerfect,
-        name: "Design - Pixel Perfect Eye",
-        description: "Over 27k open source downloads speak for me on Figma",
+        name: "Top Designer in Figma",
+        description: "Over 30k open source downloads speak for me on Figma",
         items: [{}],
         url: "https://figma.com/@matthewvogas",
     },
     {
-        image: Nothing,
-        name: "Personal Creative Project",
-        description: "Always keeping in mind the balance between innovation and functionality.",
+        image: Index,
+        name: "Index Fun",
+        description: "One of the top 10 most revolutionary web3 project in Asia according to Crypyo Banter magazine, leading the frontend app and design",
         items: [{}],
-        url: "https://gesmia.com/",
+        url: "http://index.fun/",
     },
     {
-        image: MYRV,
-        name: "MYRV's Personal Portafolio",
-        description: "Showcasing creativity, innovation, and seamless digital experiences.",
+        image: Hoosling,
+        name: "Hoosling",
+        description: "At 16, I built Hoosling—a crypto fundraiser that got $60-80K in proposals and caught the eye of Open English’s VP (my mentor). It failed, but I learned tons.",
         items: [{}],
-        url: "https://myrv.dev/",
+        url: "https://www.figma.com/design/4Q4aTd7JEuulhu1CTB7Hk5/Nothing---Vue?node-id=14-2&t=7oyb7DL2tkJv0979-1",
+    },
+    {
+        image: GesmiaWeb,
+        name: "Gesmia - iOS Security App",
+        description: "Family app: share your location with friends & family, report incidents, and view maps of safe & dangerous areas.",
+        items: [{}],
+        url: "https://gesmia.com/",
     },
 ];
 
