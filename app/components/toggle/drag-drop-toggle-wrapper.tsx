@@ -9,9 +9,6 @@ export const DragDropToggleWrapper = () => {
   };
 
   return (
-    <DragDropToggle
-      initialState={false}
-      onChange={handleToggle}
-    />
+    <DragDropToggle initialState={false} />
   );
 }; 

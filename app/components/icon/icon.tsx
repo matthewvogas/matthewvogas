@@ -8,6 +8,7 @@ interface IconProps extends LucideProps {
 }
 
 export const Icon = ({ name, ...props }: IconProps) => {
-  const LucideIcon = LucideIcons[name];
+  const LucideIcon = LucideIcons[name] as React.ElementType | undefined;
+  if (!LucideIcon) return null;
   return <LucideIcon {...props} />;
 }; 
