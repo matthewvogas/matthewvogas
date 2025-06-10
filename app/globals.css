@@ -83,6 +83,15 @@ body {
 }
 
 html {
-    font-size: 17px; 
-  }
-  
+    font-size: 17px;
+}
+
+
+a,
+button,
+input,
+textarea,
+select,
+[role="button"] {
+    cursor: none !important;
+}

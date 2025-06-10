@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import { ExternalLinks } from "../external-links/external-links";
+import { Icon } from "../icon/icon";
 
 interface Item {
     url: string;

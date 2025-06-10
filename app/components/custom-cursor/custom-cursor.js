@@ -38,9 +38,9 @@ const CustomCursor = () => {
         <svg
             className="custom-cursor"
             width="28" height="28" viewBox="0 0 34 34"
-            style={{ pointerEvents: 'none', position: 'fixed', top: 0, left: 0, zIndex: 9999, transform: 'translate(-50%, -50%)' }}
+            style={{ pointerEvents: 'none', position: 'fixed', top: 0, left: 0, zIndex: 9999, transform: 'translate(-15%, -7%)' }}
         >
-            <filter id="shadow" x="-20%" y="-20%" width="120%" height="120%">
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
                 <feDropShadow dx="4" dy="6" stdDeviation="3" floodColor="#000" floodOpacity="0.18" />
             </filter>
             <polygon
