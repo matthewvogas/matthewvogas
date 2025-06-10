@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Icon } from "../icon/icon";
+import { Icon } from "../../../components/icon/icon";
 import { motion } from "framer-motion";
 import { useDragDropStore } from "../../store/drag-drop-store";
 

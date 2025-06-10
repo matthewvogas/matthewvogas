@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "../icon/icon";
+import { Icon } from "../../../components/icon/icon";
 import { useDragDropStore } from "../../store/drag-drop-store";
 
 interface Item {
