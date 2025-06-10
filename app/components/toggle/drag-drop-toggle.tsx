@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Icon } from "../icon/icon";
 import { motion } from "framer-motion";
+import { useDragDropStore } from "../../store/drag-drop-store";
 
 interface DragDropToggleProps {
   initialState?: boolean;
-  onChange?: (enabled: boolean) => void;
 }
 
-export const DragDropToggle = ({ initialState = false, onChange }: DragDropToggleProps) => {
-  const [isEnabled, setIsEnabled] = useState(initialState);
+export const DragDropToggle = ({ initialState = false }: DragDropToggleProps) => {
+  const { isEnabled, setEnabled } = useDragDropStore();
 
   const handleToggle = () => {
-    const newState = !isEnabled;
-    setIsEnabled(newState);
-    onChange?.(newState);
+    setEnabled(!isEnabled);
   };
 
   return (

@@ -1,9 +1,11 @@
 import React from "react";
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
-import { ExternalLinks } from "../external-links/external-links";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "../icon/icon";
+import { useDragDropStore } from "../../store/drag-drop-store";
 
 interface Item {
     url?: string;
@@ -19,30 +21,72 @@ type StaticImageData = {
 };
 
 interface Props {
-    name: string,
-    description: string,
-    image: StaticImageData,
-    items?: Item[],
-    url: string
+    id: string;
+    name: string;
+    description: string;
+    image: StaticImageData;
+    items?: Item[];
+    url: string;
+    isDragging?: boolean;
 }
 
-export const ProjectCard = ({ name, description, image, items, url }: Props) => {
-    return (
-        <div className="overflow-clip group flex flex-col gap-4 rounded w-full mb-4 lg:px-4 lg:pt-4 border border-transparent custom-border-gradient lg:hover:shadow-sm lg:hover:bg-hover-light dark:lg:hover:bg-hover-light-dark transition-colors duration-200">
+export const ProjectCard = ({ id, name, description, image, items, url, isDragging = false }: Props) => {
+    const { isEnabled } = useDragDropStore();
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({ id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+    };
+
+    const cardContent = (
+        <>
             <div>
-                <Link className="flex" href={url}>
-                    <h3 className="group-hover:text-text-secondary dark:group-hover:text-text-secondary-dark font-medium leading-snug text-gray-200 inline-block">{name}</h3>
+                <div className={`flex ${isEnabled ? '' : ' group'}`}>
+                    <h3 className={`font-medium leading-snug text-gray-200 inline-block ${isEnabled ? '' : 'group-hover:text-text-secondary dark:group-hover:text-text-secondary-dark'}`}>{name}</h3>
                     <Icon 
                         name="ArrowUpRight" 
                         size={20} 
-                        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200 ml-2"
+                        className={`transition-transform duration-200 ml-2 ${isEnabled ? '' : ' group-hover:translate-x-1 group-hover:-translate-y-1'}`}
                     />
-                </Link>
+                </div>
                 <p className="mt-2 text-sm leading-normal text-white/55">{description}</p>
             </div>
             <div>
-                <Image src={image} alt={""} className="-mb-2 h-full w-full object-cover transition-transform duration-500 group-hover:translate-y-[-5px]" />
+                <Image src={image} alt={""} className={`-mb-2 h-full w-full object-cover transition-transform duration-500 ${isEnabled ? '' : ' group-hover:translate-y-[-5px]'}`} />
             </div>
+        </>
+    );
+
+    return (
+        <div 
+            ref={setNodeRef}
+            style={style}
+            {...attributes}
+            {...listeners}
+            className={`
+                overflow-clip group flex flex-col gap-4 rounded w-full mb-4 lg:px-4 lg:pt-4 
+                ${isDragging ? '' : 'transition-colors duration-200'}
+                ${isEnabled 
+                    ? 'cursor-move border-2 border-dotted border-white/20 bg-white/5'
+                    : 'cursor-pointer border border-transparent custom-border-gradient lg:hover:shadow-sm lg:hover:bg-hover-light dark:lg:hover:bg-hover-light-dark'
+                }
+                ${isDragging ? 'opacity-[0.05]' : ''}
+            `}
+        >
+            {isEnabled ? (
+                cardContent
+            ) : (
+                <Link href={url} className="flex flex-col gap-4">
+                    {cardContent}
+                </Link>
+            )}
         </div>
     )
 }
