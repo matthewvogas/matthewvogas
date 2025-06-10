@@ -5,6 +5,7 @@ import Image from "next/image";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent, DragOverlay } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 
 import { ExperienceCard } from "./components/experience/experience-card.tsx";
 import { ProjectCard } from "./components/projects/project-card.tsx";
@@ -15,6 +16,8 @@ import { useDragDropStore } from "./store/drag-drop-store";
 import "./globals.css";
 
 import { experience, projects, blogs, social } from "./data/data.js";
+import { FontCycleToggle } from "./components/toggle/font-cycle-toggle.tsx";
+import { useFontStore } from "./store/font-store";
 
 interface Project {
   id: string;
@@ -25,6 +28,14 @@ interface Project {
   url: string;
 }
 
+const fontFamilies = [
+  'Redaction-Regular',
+  'Redaction-Bold',
+  'Redaction-Italic',
+  'Redaction_100-Regular',
+  'Redaction_70-Bold',
+];
+
 export default function Home() {
   const [items, setItems] = useState<Project[]>(projects.map((project, index) => ({
     ...project,
@@ -32,6 +43,7 @@ export default function Home() {
   })));
   const { isEnabled } = useDragDropStore();
   const [activeId, setActiveId] = useState<string | null>(null);
+  const { fontIndex } = useFontStore();
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -67,16 +79,27 @@ export default function Home() {
       <section className=" lg:pt-24 lg:w-3/4 lg:py-24 flex flex-col top-0 lg:sticky lg:h-screen">
         <div>
           <div className="flex flex-col gap-4">
-            <h1 className="opacity-90 text-text-primary dark:text-white/85 text-5xl font-semibold">
-              Matthew Guillén
-            </h1>
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={fontIndex}
+                className="opacity-90 text-text-primary dark:text-white/85 text-5xl font-semibold cursor-pointer"
+                style={{ fontFamily: fontFamilies[fontIndex] }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.15, ease: "easeInOut" }}
+              >
+                Matthew Vogas
+              </motion.h1>
+            </AnimatePresence>
             <h2 className="text-1xl font-medium tracking-tight text-white/75 sm:text-xl">
-              Frontend Engineer & Product Developer
+              Frontend Engineer & Product Designer
             </h2>
             <p className="scroll-mt-16 text-white/55 lg:scroll-mt-24 text-">
-              {`I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
+              {`Like developer that also designs, I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
             </p>
             <DragDropToggleWrapper />
+            <FontCycleToggle fontFamilies={fontFamilies} />
           </div>
         </div>
       </section>
