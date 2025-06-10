@@ -15,20 +15,14 @@ export default function Home() {
       <section className=" lg:pt-24 lg:w-3/4 lg:py-24 flex flex-col top-0 lg:sticky lg:h-screen">
         <div>
           <div className="flex flex-col gap-4">
-            <h1 className="opacity-90 text-text-primary dark:text-text-primary-dark text-5xl font-semibold">
+            <h1 className="opacity-90 text-text-primary dark:text-white/85 text-5xl font-semibold">
               Matthew Guillén
             </h1>
-            <h2 className="text-1xl font-medium tracking-tight text-slate-200 sm:text-xl">
+            <h2 className="text-1xl font-medium tracking-tight text-white/75 sm:text-xl">
               Frontend Engineer & Product Developer
             </h2>
-            <p className="scroll-mt-16 text-gray-400 lg:scroll-mt-24 text-">
+            <p className="scroll-mt-16 text-white/55 lg:scroll-mt-24 text-">
               {`I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
-              <Link
-                className="transition-colors duration-200 ease-in-out font-medium text-slate-200 hover:text-text-secondary dark:hover:text-text-secondary-dark focus-visible:text-text-tertiary dark:focus-visible:text-text-tertiary-dark"
-                href="mailto:mvttheo@outlook.com"
-              >
-                {`Let's chat.`}
-              </Link>
             </p>
           </div>
         </div>
@@ -69,7 +63,7 @@ export default function Home() {
           ))}
         </div>
         <Link
-          className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl mb-24 custom-underline"
+          className="mt-3 text-lg font-medium tracking-tight text-gray-200 sm:text-xl mb-24 custom-underline"
           href={"/resume.pdf"}
         >
           View Full Resume
@@ -82,7 +76,7 @@ export default function Home() {
           ))}
         </div>
         {/* <Link
-          className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl mb-2 custom-underline"
+          className="mt-3 text-lg font-medium tracking-tight text-gray-200 sm:text-xl mb-2 custom-underline"
           href={"https://medium.com/@matthewvogas"}
         >
           Read All blogs in Medium
