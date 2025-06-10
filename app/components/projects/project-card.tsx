@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ExternalLinks } from "../externalLinks/ExternalLinks";
+import { ExternalLinks } from "../external-links/external-links";
 import Image from "next/image";
 import Link from "next/link";
 interface Item {

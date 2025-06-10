@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { ExperienceCard } from "./components/experience/ExperienceCard.tsx";
-import { ProjectCard } from "./components/projects/ProjectCard.tsx";
-import { BlogCard } from "./components/blogs/BlogCard.tsx";
+import { ExperienceCard } from "./components/experience/experience-card.tsx";
+import { ProjectCard } from "./components/projects/project-card.tsx";
+import { BlogCard } from "./components/blogs/blog-card.tsx";
 
 import "./globals.css";
 

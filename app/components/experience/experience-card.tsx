@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ExternalLinks } from "../externalLinks/ExternalLinks";
+import { ExternalLinks } from "../external-links/external-links";
 
 interface Item {
     url?: string;

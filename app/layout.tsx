@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google';
 
 import "./globals.css";
 
-import CustomCursorShadow  from './components/customCursor/CustomCursor'
+import CustomCursorShadow  from './components/custom-cursor/custom-cursor'
 
 const inter = Inter({
   subsets: ['latin'],
