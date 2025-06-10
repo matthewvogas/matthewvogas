@@ -18,21 +18,19 @@
 }
 
 .custom-cursor {
-    width: 1px;
-    height: 1px;
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    border-radius: 1000px;
-    box-shadow: 0 0 450px 100px rgba(167, 151, 255, 0.212);
-    transform: translate(-50%, -50%);
     z-index: 9999;
+    width: auto;
+    height: auto;
     transition: transform 0.1s;
 }
 
 body {
     font-family: 'Inter', sans-serif;
+    cursor: none;
 }
 
 .custom-border-gradient {

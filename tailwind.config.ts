@@ -6,8 +6,39 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        background: {
+          DEFAULT: '#ffffff',
+          dark: '#1a1a1a',
+        },
+        text: {
+          primary: {
+            DEFAULT: '#1a1a1a',
+            dark: '#fafafaf8',
+          },
+          secondary: {
+            DEFAULT: '#31313e',
+            dark: '#a0a0a0',
+          },
+          tertiary: {
+            DEFAULT: '#6366f1',
+            dark: '#cacaca',
+          },
+        },
+        hover: {
+          light: {
+            DEFAULT: '#f3f4f6',
+            dark: '#bfbfbf0a',
+          },
+          secondary: {
+            DEFAULT: '#e0e7ff',
+            dark: '#bfbfbf15',
+          },
+        }
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

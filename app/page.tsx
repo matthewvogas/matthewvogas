@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ExperienceCard } from "./components/experience/ExperienceCard.tsx";
 import { ProjectCard } from "./components/projects/ProjectCard.tsx";
 import { BlogCard } from "./components/blogs/BlogCard.tsx";
-import { Donut } from "./components/world/World.tsx";
 
 import "./globals.css";
 
@@ -16,45 +15,26 @@ export default function Home() {
       <section className=" lg:pt-24 lg:w-3/4 lg:py-24 flex flex-col top-0 lg:sticky lg:h-screen">
         <div>
           <div className="flex flex-col gap-4">
-            <h1 className="opacity-90 text-[#fafafaf8] text-5xl font-semibold">
+            <h1 className="opacity-90 text-text-primary dark:text-text-primary-dark text-5xl font-semibold">
               Matthew Guillén
             </h1>
             <h2 className="text-1xl font-medium tracking-tight text-slate-200 sm:text-xl">
               Frontend Engineer & Product Developer
             </h2>
-            <p className="scroll-mt-16 text-slate-400 lg:scroll-mt-24 text-">
+            <p className="scroll-mt-16 text-gray-400 lg:scroll-mt-24 text-">
               {`I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
               <Link
-                className="transition-colors duration-200 ease-in-out font-medium text-slate-200 hover:text-[#7167ff] focus-visible:text-[#9891fb]"
+                className="transition-colors duration-200 ease-in-out font-medium text-slate-200 hover:text-text-secondary dark:hover:text-text-secondary-dark focus-visible:text-text-tertiary dark:focus-visible:text-text-tertiary-dark"
                 href="mailto:mvttheo@outlook.com"
               >
                 {`Let's chat.`}
               </Link>
             </p>
           </div>
-          <Donut />
-        </div>
-        <div className="flex flex-row gap-4 pt-6 lg:mt-0 mb-12 lg:mb-0">
-          {social.map((social, index) => (
-            <Link
-              target="_blank"
-              href={social.url}
-              key={index}
-              className="opacity-75 hover:opacity-100 transition-opacity duration-200 ease-in-out"
-            >
-              <Image
-                className="max-w-6"
-                src={social.icon}
-                alt={social.name}
-                width={24}
-                height={24}
-              />
-            </Link>
-          ))}
         </div>
       </section>
       <section className=" lg:pt-24 lg:py-24 w-full ">
-        <h1 className="opacity-90 text-[#fafafaf8] text-2xl mb-4 font-semibold">
+        <h1 className="opacity-90 text-text-primary dark:text-text-primary-dark text-2xl mb-4 font-semibold">
           Projects where I led{" "}
         </h1>
         <div className="relative z-0 hover-opacity-others">
@@ -71,7 +51,7 @@ export default function Home() {
           ))}
         </div>
         <div className="relative z-0 hover-opacity-others">
-          <h1 className="mt-24 opacity-90 text-[#fafafaf8] text-2xl mb-4 font-semibold">
+          <h1 className="mt-24 opacity-90 text-text-primary dark:text-text-primary-dark text-2xl mb-4 font-semibold">
             My experience since I was 16 years old
           </h1>
           {experience.map((experience, index) => (
