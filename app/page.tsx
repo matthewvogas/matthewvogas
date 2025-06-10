@@ -2,9 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent, DragOverlay } from '@dnd-kit/core';
-import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import { useState } from 'react';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+  DragOverlay,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { ExperienceCard } from "./components/experience/experience-card.tsx";
@@ -29,18 +43,20 @@ interface Project {
 }
 
 const fontFamilies = [
-  'Redaction-Regular',
-  'Redaction-Bold',
-  'Redaction-Italic',
-  'Redaction_100-Regular',
-  'Redaction_70-Bold',
+  "Redaction-Regular",
+  "Redaction-Bold",
+  "Redaction-Italic",
+  "Redaction_100-Regular",
+  "Redaction_70-Bold",
 ];
 
 export default function Home() {
-  const [items, setItems] = useState<Project[]>(projects.map((project, index) => ({
-    ...project,
-    id: `project-${index}`
-  })));
+  const [items, setItems] = useState<Project[]>(
+    projects.map((project, index) => ({
+      ...project,
+      id: `project-${index}`,
+    }))
+  );
   const { isEnabled } = useDragDropStore();
   const [activeId, setActiveId] = useState<string | null>(null);
   const { fontIndex } = useFontStore();
@@ -107,7 +123,11 @@ export default function Home() {
         <h1 className="opacity-90 text-text-primary dark:text-text-primary-dark text-2xl mb-4 font-semibold">
           Projects where I led{" "}
         </h1>
-        <div className={`relative z-0 ${!isEnabled ? ' hover-opacity-others' : ''}`}>
+        <div
+          className={`relative z-0 ${
+            !isEnabled ? " hover-opacity-others" : ""
+          }`}
+        >
           {isEnabled ? (
             <DndContext
               sensors={sensors}
@@ -117,7 +137,7 @@ export default function Home() {
               onDragCancel={handleDragCancel}
             >
               <SortableContext
-                items={items.map(item => item.id)}
+                items={items.map((item) => item.id)}
                 strategy={verticalListSortingStrategy}
               >
                 {items.map((project) => (
@@ -136,7 +156,7 @@ export default function Home() {
               </SortableContext>
               <DragOverlay>
                 {activeProject ? (
-                  <div style={{ width: '100%' }}>
+                  <div style={{ width: "100%" }}>
                     <ProjectCard
                       id={activeProject.id}
                       name={activeProject.name}
@@ -195,12 +215,28 @@ export default function Home() {
             </div>
           ))}
         </div>
-        {/* <Link
-          className="mt-3 text-lg font-medium tracking-tight text-gray-200 sm:text-xl mb-2 custom-underline"
-          href={"https://medium.com/@matthewvogas"}
-        >
-          Read All blogs in Medium
-        </Link> */}
+        <div className="flex  gap-4 items-center mt-12">
+          <Image
+            src="/gifs/coin.gif"
+            className=""
+            alt="Coin"
+            width={30}
+            height={30}
+          />
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={fontIndex}
+              className="opacity-90 text-text-primary dark:text-white/85 text-1xl lg:text-2xl font-semibold cursor-pointer"
+              style={{ fontFamily: fontFamilies[fontIndex] }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.15, ease: "easeInOut" }}
+            >
+              Thanks for visiting!
+            </motion.h1>
+          </AnimatePresence>
+        </div>
       </section>
     </main>
   );
