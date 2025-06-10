@@ -4,6 +4,9 @@ import React from "react";
 import { Icon } from "../../../components/icon/icon";
 import { motion } from "framer-motion";
 import { useDragDropStore } from "../../store/drag-drop-store";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 
 interface DragDropToggleProps {
   initialState?: boolean;
@@ -22,9 +25,19 @@ export const DragDropToggle = ({ initialState = false }: DragDropToggleProps) =>
         <span className="text-xs font-semibold text-gray-200/50 leading-[18px]">
           Drag and Drop mode
         </span>
-        <div className="w-4 h-4 opacity-60 hover:opacity-100 transition-opacity">
-          <Icon name="HelpCircle" size={16} className="w-full h-full" />
-        </div>
+        <Tippy
+          content={
+            <div className="text-sm p-1">
+              <p className="text-xs text-white/75">Use the grip icon to drag projects.</p>
+            </div>
+          }
+          placement="top"
+          className="bg-secondary"
+        >
+          <div className="w-4 h-4 opacity-60 hover:opacity-100 transition-opacity">
+            <Icon name="HelpCircle" size={16} className="w-full h-full" />
+          </div>
+        </Tippy>
       </div>
 
       <button
