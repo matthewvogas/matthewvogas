@@ -4,6 +4,10 @@ import { useEffect } from 'react';
 
 const CustomCursor = () => {
     useEffect(() => {
+        // Check if we're on a mobile device
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) return;
+
         const cursor = document.querySelector('.custom-cursor');
         
         const onMouseMove = (e) => {
@@ -33,6 +37,11 @@ const CustomCursor = () => {
             });
         };
     }, []);
+
+    // Don't render the cursor SVG on mobile
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        return null;
+    }
 
     return (
         <svg

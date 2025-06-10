@@ -33,6 +33,15 @@ body {
     cursor: none;
 }
 
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    .custom-cursor {
+        display: none;
+    }
+}
+
 .custom-border-gradient {
     border: 0.6px solid transparent;
 }

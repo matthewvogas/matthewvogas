@@ -48,7 +48,21 @@ export const ProjectCard = ({ id, name, description, image, items, url, isDraggi
     const cardContent = (
         <>
             <div>
-                <div className={`flex ${isEnabled ? '' : ' group'}`}>
+                <div className={`flex items-center ${isEnabled ? '' : ' group'}`}>
+                    {isEnabled && (
+                        <div 
+                            {...listeners} 
+                            {...attributes} 
+                            className="cursor-move mr-2 touch-none hover:bg-white/5 rounded-md transition-colors duration-200 p-1"
+                            style={{ touchAction: 'none' }}
+                        >
+                            <Icon 
+                                name="GripVertical" 
+                                size={20} 
+                                className="text-white/40 " 
+                            />
+                        </div>
+                    )}
                     <h3 className={`font-medium leading-snug text-gray-200 inline-block ${isEnabled ? '' : 'group-hover:text-text-secondary dark:group-hover:text-text-secondary-dark'}`}>{name}</h3>
                     <Icon 
                         name="ArrowUpRight" 
@@ -68,13 +82,11 @@ export const ProjectCard = ({ id, name, description, image, items, url, isDraggi
         <div 
             ref={setNodeRef}
             style={style}
-            {...attributes}
-            {...listeners}
             className={`
-                overflow-clip group flex flex-col gap-4 rounded w-full mb-4 lg:px-4 lg:pt-4 
+                overflow-clip group flex flex-col gap-4 rounded w-full mb-4 px-3 pt-3 lg:px-4 lg:pt-4 
                 ${isDragging ? '' : 'transition-colors duration-200'}
                 ${isEnabled 
-                    ? 'cursor-move border-2 border-dotted border-white/20 bg-white/5'
+                    ? 'border-2 border-dotted border-white/20 bg-white/5'
                     : 'cursor-pointer border border-transparent custom-border-gradient lg:hover:shadow-sm lg:hover:bg-hover-light dark:lg:hover:bg-hover-light-dark'
                 }
                 ${isDragging ? 'opacity-[0.05]' : ''}

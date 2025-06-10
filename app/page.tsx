@@ -82,7 +82,7 @@ export default function Home() {
             <AnimatePresence mode="wait">
               <motion.h1
                 key={fontIndex}
-                className="opacity-90 text-text-primary dark:text-white/85 text-5xl font-semibold cursor-pointer"
+                className="opacity-90 text-text-primary dark:text-white/85 text-3xl lg:text-5xl font-semibold cursor-pointer"
                 style={{ fontFamily: fontFamilies[fontIndex] }}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
