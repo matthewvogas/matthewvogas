@@ -8,7 +8,6 @@ import instagram from "../../public/icons/instagram.svg";
 import Index from "../../public/images/projects/Index.png";
 import Hoosling from "../../public/images/projects/Hoosling.png";
 import GesmiaWeb from "../../public/images/projects/GesmiaWeb.png";
-import Athena from "../../public/images/projects/Athena.png";
 
 export const experience = [
   {
@@ -127,7 +126,7 @@ export const projects = [
   },
   {
     id: "Athena",
-    image: Athena,
+    image: "https://bilyhlldjwiccoeczzyw.supabase.co/storage/v1/object/public/videos//athena.png",
     name: "Athena",
     description:
       "AI-powered app for the crypto trading creation with drag and drop and code editor, helping users to create their own trading systems.",
