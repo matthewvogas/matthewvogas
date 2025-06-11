@@ -18,7 +18,7 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { ExperienceCard } from "./components/experience/experience-card.tsx";
@@ -32,6 +32,7 @@ import "./globals.css";
 import { experience, projects, blogs, social } from "./data/data.js";
 import { FontCycleToggle } from "./components/toggle/font-cycle-toggle.tsx";
 import { useFontStore } from "./store/font-store";
+import { Icon } from "@/components/icon/icon.tsx";
 
 interface Project {
   id: string;
@@ -51,12 +52,22 @@ const fontFamilies = [
 ];
 
 export default function Home() {
-  const [items, setItems] = useState<Project[]>(
-    projects.map((project, index) => ({
-      ...project,
-      id: `project-${index}`,
-    }))
-  );
+  const [items, setItems] = useState<Project[]>(() => {
+    if (typeof window !== 'undefined') {
+      const storedOrder = localStorage.getItem('projectOrder');
+      if (storedOrder) {
+        const order = JSON.parse(storedOrder);
+        const orderedProjects = order.map((id: string) => {
+          const project = projects.find(p => p.id === id);
+          return project ? { ...project } : null;
+        }).filter(Boolean) as Project[];
+        
+        const missingProjects = projects.filter(p => !orderedProjects.find((op: Project) => op.id === p.id));
+        return [...orderedProjects, ...missingProjects];
+      }
+    }
+    return [...projects];
+  });
   const { isEnabled } = useDragDropStore();
   const [activeId, setActiveId] = useState<string | null>(null);
   const { fontIndex } = useFontStore();
@@ -79,7 +90,9 @@ export default function Home() {
       setItems((items) => {
         const oldIndex = items.findIndex((item) => item.id === active.id);
         const newIndex = items.findIndex((item) => item.id === over?.id);
-        return arrayMove(items, oldIndex, newIndex);
+        const newItems = arrayMove(items, oldIndex, newIndex);
+        localStorage.setItem('projectOrder', JSON.stringify(newItems.map(item => item.id)));
+        return newItems;
       });
     }
   };
@@ -115,7 +128,25 @@ export default function Home() {
               {`Like developer that also designs, I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
             </p>
             <DragDropToggleWrapper />
+            <div className="flex flex-col">
             <FontCycleToggle fontFamilies={fontFamilies} />
+            <Link
+              href="/resume.pdf"
+              className="flex items-center gap-2 mt-4 px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-colors duration-200 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background-dark"
+              aria-label="Resume"
+            >
+              <Icon name="Dock" size={18} className="mr-2" />
+              Resume
+            </Link>
+            <Link
+              href="https://www.figma.com/@matthewvogas"
+              className="flex items-center gap-2 mt-4 px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-colors duration-200 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background-dark"
+              aria-label="Resume"
+            >
+              <Icon name="PenTool" size={18} className="mr-2" />
+              30k downloads in Figma Open Source
+            </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -170,7 +201,7 @@ export default function Home() {
               </DragOverlay>
             </DndContext>
           ) : (
-            projects.map((project) => (
+            items.map((project) => (
               <div className="child" key={project.id}>
                 <ProjectCard
                   id={project.id}
