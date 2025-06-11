@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         background: {
           DEFAULT: '#ffffff',
-          dark: '#100f0f',
+          dark: '#0E0E0E',
         },
         text: {
           primary: {

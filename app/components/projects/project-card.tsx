@@ -13,18 +13,11 @@ interface Item {
     description?: string;
 }
 
-type StaticImageData = {
-    src: string;
-    height: number;
-    width: number;
-    blurDataURL?: string;
-};
-
 interface Props {
     id: string;
     name: string;
     description: string;
-    image: StaticImageData;
+    image: any;
     items?: Item[];
     url: string;
     isDragging?: boolean;
@@ -73,7 +66,7 @@ export const ProjectCard = ({ id, name, description, image, items, url, isDraggi
                 <p className="mt-2 text-sm leading-normal text-white/55">{description}</p>
             </div>
             <div>
-                <Image src={image} alt={""} className={`-mb-2 h-full w-full object-cover transition-transform duration-500 ${isEnabled ? '' : ' group-hover:translate-y-[-5px]'}`} />
+                <Image src={image} width={1000} height={1000} alt={""} className={`-mb-2 h-full w-full object-cover transition-transform duration-500 ${isEnabled ? '' : ' group-hover:translate-y-[-5px]'}`} />
             </div>
         </>
     );
@@ -95,7 +88,7 @@ export const ProjectCard = ({ id, name, description, image, items, url, isDraggi
             {isEnabled ? (
                 cardContent
             ) : (
-                <Link href={url} className="flex flex-col gap-4">
+                <Link href={`/project/${id}`} className="flex flex-col gap-4">
                     {cardContent}
                 </Link>
             )}

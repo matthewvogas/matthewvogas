@@ -25,7 +25,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href={'./favicon.ico'} />
       </Head>
-      <body className={`bg-background dark:bg-background-dark tracking-tight ${inter.className} mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 scroll-hidden`}>
+      <body className={`bg-background dark:bg-background-dark tracking-tight ${inter.className} mx-auto min-h-screen max-w-screen-xl px-6 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 scroll-hidden`}>
         <CustomCursorShadow />
         {children}
       </body>

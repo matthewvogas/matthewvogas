@@ -121,7 +121,7 @@ export default function Home() {
       </section>
       <section className=" lg:pt-24 lg:py-24 w-full ">
         <h1 className="opacity-90 text-text-primary dark:text-text-primary-dark text-2xl mb-4 font-semibold">
-          Projects where I led{" "}
+          Featured projects
         </h1>
         <div
           className={`relative z-0 ${
@@ -170,10 +170,10 @@ export default function Home() {
               </DragOverlay>
             </DndContext>
           ) : (
-            projects.map((project, index) => (
-              <div className="child" key={index}>
+            projects.map((project) => (
+              <div className="child" key={project.id}>
                 <ProjectCard
-                  id={`project-${index}`}
+                  id={project.id}
                   name={project.name}
                   description={project.description}
                   image={project.image}
