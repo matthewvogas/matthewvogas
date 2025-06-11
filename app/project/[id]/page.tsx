@@ -292,7 +292,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       return (
         <motion.h1
           key={fontIndex}
-          className="opacity-90 text-text-primary dark:text-white/85 text-3xl lg:text-5xl font-semibold cursor-pointer mb-4 text-center"
+          className="opacity-90 text-text-primary dark:text-white/85 text-3xl lg:text-5xl font-semibold cursor-pointer mb-4 text-center mt-8 md:mt-0"
           style={{ fontFamily: fontFamilies[fontIndex] }}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -369,7 +369,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   const renderContent = () => {
     return (
       <>
-        <div className="fixed top-4 left-4 z-50">
+        <div className="fixed md:left-4 left-1/2 -translate-x-1/2 md:translate-x-0 top-4 z-50">
           <FlowCanvasToggle />
         </div>
         {isFlowCanvasEnabled ? (

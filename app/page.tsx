@@ -107,7 +107,7 @@ export default function Home() {
     <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-[#fafafaf8] w-full sticky">
       <section className=" lg:pt-24 lg:w-3/4 lg:py-24 flex flex-col top-0 lg:sticky lg:h-screen">
         <div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mt-6 md:mt-0">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={fontIndex}
