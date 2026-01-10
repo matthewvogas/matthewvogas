@@ -127,7 +127,6 @@ export default function Home() {
             <p className="scroll-mt-16 text-white/55 lg:scroll-mt-24 text-">
               {`Like developer that also designs, I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
             </p>
-            <DragDropToggleWrapper />
             <div className="flex flex-col">
             <FontCycleToggle fontFamilies={fontFamilies} />
             <Link
