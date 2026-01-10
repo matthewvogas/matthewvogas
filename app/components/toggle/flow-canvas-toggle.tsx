@@ -22,7 +22,7 @@ export const FlowCanvasToggle = ({
   };
 
   return (
-    <div className="flex items-center gap-2 mt-4">
+    <div className="w-full flex items-center justify-end gap-2">
       <div className="flex items-center gap-1 group cursor-help">
         <span className="text-xs font-semibold text-gray-200/50 leading-[18px]">
           Canvas Mode

@@ -17,29 +17,8 @@
     padding: 0;
 }
 
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    width: auto;
-    height: auto;
-    transition: transform 0.1s;
-}
-
 body {
     font-family: 'Inter', sans-serif;
-    cursor: none;
-}
-
-@media (max-width: 768px) {
-    body {
-        cursor: auto;
-    }
-    .custom-cursor {
-        display: none;
-    }
 }
 
 .custom-border-gradient {
@@ -93,16 +72,6 @@ body {
 
 html {
     font-size: 17px;
-}
-
-
-a,
-button,
-input,
-textarea,
-select,
-[role="button"] {
-    cursor: none !important;
 }
 
 @font-face {

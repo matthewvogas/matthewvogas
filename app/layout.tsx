@@ -3,8 +3,7 @@ import Head from 'next/head';
 import { Inter } from '@next/font/google';
 
 import "./globals.css";
-
-import CustomCursorShadow  from './components/custom-cursor/custom-cursor'
+import { FontAutoCycle } from "./components/font-auto-cycle";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +25,7 @@ export default function RootLayout({
         <link rel="icon" href={'./favicon.ico'} />
       </Head>
       <body className={`bg-background dark:bg-background-dark tracking-tight ${inter.className} mx-auto min-h-screen max-w-screen-xl px-6 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0 scroll-hidden`}>
-        <CustomCursorShadow />
+        <FontAutoCycle />
         {children}
       </body>
     </html>
