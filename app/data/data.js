@@ -111,7 +111,6 @@ export const projects = [
     description:
       "AI-powered app for the crypto trading creation with drag and drop and code editor, helping users to create their own trading systems.",
     items: [{}],
-    url: "https://athena.ai/",
     role: "Product Designer & Frontend Developer",
     team: "Along with the founder - Former NASA employee",
     timeline: "2024",
@@ -155,7 +154,7 @@ export const projects = [
   {
     id: "no-fapp",
     image: NoFappApp,
-    name: "No-Fap",
+    name: "No-Fap App",
     description:
       "Mobile app designed to help users quit addiction, featuring community support, progress tracking, and streak management.",
     items: [{}],

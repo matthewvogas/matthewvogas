@@ -6,7 +6,7 @@ import { useFontStore } from "../../store/font-store";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { FlowCanvasToggle } from "../../components/toggle/flow-canvas-toggle";
+import { ArrowLeftIcon } from "lucide-react";
 
 const fontFamilies = [
   "Redaction-Regular",
@@ -57,11 +57,14 @@ function GalleryRow({
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.15, ease: "easeInOut" }}
               >
-                {item.title ?? `Gallery ${index + 1}`} {`  `} 
+                {item.title ?? `Gallery ${index + 1}`} {`  `}
               </motion.h3>
             </AnimatePresence>
             {item.description ? (
-              <span className="text-xs text-white/45"> * {item.description}</span>
+              <span className="text-xs text-white/45">
+                {" "}
+                * {item.description}
+              </span>
             ) : null}
           </div>
         </div>
@@ -82,8 +85,10 @@ function getYouTubeId(rawUrl: string): string | null {
 
     if (host.endsWith("youtube.com")) {
       if (url.pathname === "/watch") return url.searchParams.get("v");
-      if (url.pathname.startsWith("/embed/")) return url.pathname.split("/")[2] || null;
-      if (url.pathname.startsWith("/shorts/")) return url.pathname.split("/")[2] || null;
+      if (url.pathname.startsWith("/embed/"))
+        return url.pathname.split("/")[2] || null;
+      if (url.pathname.startsWith("/shorts/"))
+        return url.pathname.split("/")[2] || null;
     }
 
     return null;
@@ -163,14 +168,17 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-black/10 backdrop-blur-sm">
         <div className="flex h-14 items-center justify-between px-6">
           <Link
             href="/"
-            className="hover:underline w-full text-sm font-semibold text-gray-200 hover:text-white/90 transition-colors duration-200"
+            className="hover:underline w-full text-sm text-gray-200 hover:text-white/90 transition-colors duration-200"
             aria-label="Go back to home"
           >
-            ← <label htmlFor="" className="cursor-pointer ml-2">Back</label>
+            <label htmlFor="" className="cursor-pointer ml-2 flex items-center gap-2">
+              <ArrowLeftIcon className="w-4 h-4" />
+              Go Back
+            </label>
           </Link>
           <div className="w-full flex items-center justify-end leading-tight">
             {project.name.toLowerCase() !== params.id.toLowerCase() ? (
@@ -200,46 +208,26 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             {project.longDescription}
           </p>
 
-          <div className="flex gap-4 mt-4 mb-1">
-            <Link
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 mt-4 px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-colors duration-200 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background-dark"
-            >
-              Visit Project
-            </Link>
-          </div>
+          {project.url && project.url.trim() !== "" && (
+            <div className="flex gap-4 mt-4 mb-1">
+              <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 mt-4 px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-colors duration-200 text-sm font-semibold text-gray-200 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background-dark"
+              >
+                Visit Project
+              </Link>
+            </div>
+          )}
 
-          {videoUrls.map((url, idx) => (
-            <motion.div
-              key={`video-${idx}`}
-              className="aspect-[4/2.5] w-full rounded-lg overflow-hidden flex items-center justify-center mt-4"
-            >
-              <ProjectVideo
-                url={url}
-                title={`${project.name} Video ${idx + 1}`}
-              />
-            </motion.div>
-          ))}
-
-          <div className="group flex flex-col gap-4 rounded w-full max-w-6xl mb-4 pt-3 lg:px-4 lg:pt-4 overflow-clip border border-transparent custom-border-gradient bg-white/5 dark:bg-hover-light-dark relative z-30 mt-12">
-            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-32 w-4/5 h-32 opacity-0 group-hover:opacity-80 transition-opacity duration-500 rounded-full blur-2xl z-[-1] bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600" />
-            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-2 w-4/5 h-24 opacity-0 group-hover:opacity-80 transition-opacity duration-500 rounded-full blur-2xl z-[-1] bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600" />
-            <Image
-              src={project.image}
-              alt={project.name}
-              className="w-full object-cover transition-transform duration-500 px-12 translate-y-[10%] pt-6 group-hover:translate-y-[1px] hover:shadow-lg"
-              width={1920}
-              height={600}
-            />
-          </div>
+          <div className="border-b border-white/5 my-12"></div>
 
           {((project as any).role ||
             (project as any).team ||
             (project as any).timeline ||
             (project as any).objective) && (
-            <section className="w-full max-w-6xl mt-12">
+            <section className="w-full max-w-6xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="flex flex-col gap-8 md:order-1">
                   {(project as any).role && (
@@ -288,6 +276,30 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               </div>
             </section>
           )}
+
+          {videoUrls.map((url, idx) => (
+            <motion.div
+              key={`video-${idx}`}
+              className="aspect-[4/2.5] w-full rounded-lg overflow-hidden flex items-center justify-center mt-4"
+            >
+              <ProjectVideo
+                url={url}
+                title={`${project.name} Video ${idx + 1}`}
+              />
+            </motion.div>
+          ))}
+
+          <div className="group flex flex-col gap-4 rounded w-full max-w-6xl mb-4 pt-3 lg:px-4 lg:pt-4 overflow-clip border border-transparent custom-border-gradient bg-white/5 dark:bg-hover-light-dark relative z-30 mt-12">
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-32 w-4/5 h-32 opacity-0 group-hover:opacity-80 transition-opacity duration-500 rounded-full blur-2xl z-[-1] bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600" />
+            <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-2 w-4/5 h-24 opacity-0 group-hover:opacity-80 transition-opacity duration-500 rounded-full blur-2xl z-[-1] bg-gradient-to-r from-pink-500 via-yellow-400 via-green-400 via-blue-500 to-purple-600" />
+            <Image
+              src={project.image}
+              alt={project.name}
+              className="w-full object-cover transition-transform duration-500 px-12 translate-y-[10%] pt-6 group-hover:translate-y-[16px] hover:shadow-lg"
+              width={1920}
+              height={600}
+            />
+          </div>
 
           {galleryItems.length > 0 ? (
             <section className="w-full max-w-6xl mt-12">
