@@ -19,7 +19,7 @@ interface Props {
     description: string;
     image: any;
     items?: Item[];
-    url: string;
+    url?: string;
     isDragging?: boolean;
 }
 

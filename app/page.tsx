@@ -40,7 +40,7 @@ interface Project {
   description: string;
   image: any;
   items?: any[];
-  url: string;
+  url?: string;
 }
 
 const fontFamilies = [
@@ -178,7 +178,7 @@ export default function Home() {
                       description={project.description}
                       image={project.image}
                       items={project.items}
-                      url={project.url}
+                      url={project.url || ""}
                       isDragging={activeId === project.id}
                     />
                   </div>
@@ -193,7 +193,7 @@ export default function Home() {
                       description={activeProject.description}
                       image={activeProject.image}
                       items={activeProject.items}
-                      url={activeProject.url}
+                      url={activeProject.url || ""}
                     />
                   </div>
                 ) : null}
@@ -208,7 +208,7 @@ export default function Home() {
                   description={project.description}
                   image={project.image}
                   items={project.items}
-                  url={project.url}
+                  url={project.url || ""}
                 />
               </div>
             ))
