@@ -122,7 +122,7 @@ export default function Home() {
               </motion.h1>
             </AnimatePresence>
             <h2 className="text-1xl font-medium tracking-tight text-white/75 sm:text-xl">
-              Frontend Engineer & Product Designer
+              Product Engineer & Designer
             </h2>
             <p className="scroll-mt-16 text-white/55 lg:scroll-mt-24 text-">
               {`Like developer that also designs, I build pixel-perfect digital experiences, startups apps for sick founders, and tools for leading companies. `}
